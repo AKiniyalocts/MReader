@@ -1,9 +1,11 @@
-package com.mindlessstudios.mreader.model.MediumAPI;
+package com.mindlessstudios.mreader.Medium.MediumTask;
 
 import android.os.AsyncTask;
 import android.util.Log;
 
-import org.json.JSONException;
+import com.mindlessstudios.mreader.Medium.Medium;
+import com.mindlessstudios.mreader.Medium.MediumAPI;
+
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -17,10 +19,10 @@ public class FetchMediumTask extends AsyncTask<String, Void, JSONObject> {
 
     private String LOG_TAG = FetchMediumTask.class.getSimpleName();
 
-    protected Medium.Callback mCallback;
+    protected MediumAPI.Callback mCallback;
     protected boolean success = false;
 
-    public FetchMediumTask(Medium.Callback mCallback) {
+    public FetchMediumTask(MediumAPI.Callback mCallback) {
         this.mCallback = mCallback;
     }
 
@@ -37,6 +39,8 @@ public class FetchMediumTask extends AsyncTask<String, Void, JSONObject> {
 
         try {
             URL url = new URL(params[0]);
+
+            Log.v(LOG_TAG, params[0]);
 
             urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setRequestMethod("GET");

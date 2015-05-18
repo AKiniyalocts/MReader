@@ -1,13 +1,19 @@
-package com.mindlessstudios.mreader.model.MediumAPI;
+package com.mindlessstudios.mreader.Medium;
 
 import android.net.Uri;
+import android.os.AsyncTask;
+
+import com.mindlessstudios.mreader.Medium.MediumTask.FetchMediumTask;
+import com.mindlessstudios.mreader.Medium.Model.PostShort;
+
+import org.json.JSONObject;
 
 import java.util.Date;
 
 /**
- * Created by James on 5/9/2015.
+ * API for interacting with posts
  */
-public class MediumPost extends Medium {
+public class PostAPI extends MediumAPI {
     final static String RESOURCE = "posts";
 
     /**

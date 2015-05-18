@@ -1,4 +1,4 @@
-package com.mindlessstudios.mreader.model.MediumAPI;
+package com.mindlessstudios.mreader.Medium;
 
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -17,13 +17,8 @@ import java.util.Date;
 import java.util.Map;
 
 /**
- * Implementation of the medium api
+ * Namespace for Medium API's
  */
-abstract public class Medium {
-
-    protected final static String MEDIUM_BASE_URL = "https://medium.com/_/api/";
-
-    public interface Callback {
-        public void onBack(boolean success, JSONObject data);
-    }
+public class Medium {
+    public static PostAPI postAPI = new PostAPI();
 }
